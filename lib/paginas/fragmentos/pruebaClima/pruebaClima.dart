@@ -47,9 +47,14 @@ class PruebaClima extends StatelessWidget {
                     ),
                     validator: (String? valor) {
                       String v = valor ?? "";
+                      RegExp lat = RegExp(r'^(\+|-)?(?:(?:(?:\.0{1,6})?)|(?:[0-9]|[1-8][0-9])(?:(?:\.[0-9]{1,8})?))$');
 
                       if(v.isEmpty) {
                         return 'Por favor introduzca un valor';
+                      }
+
+                      if(!lat.hasMatch(v)){
+                        return 'Latitud no valida';
                       }
 
                     },
@@ -81,11 +86,15 @@ class PruebaClima extends StatelessWidget {
                     },
                     validator: (valor ) {
                       String v = valor ?? "";
+                      RegExp long = RegExp(r'^(\+|-)?(?:(?:(?:\.0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\.[0-9]{1,8})?))$');
 
                       if(v.isEmpty) {
                         return 'Por favor introduzca un valor';
                       }
 
+                      if(!long.hasMatch(v)){
+                        return 'Longitud no valida';
+                      }
                     },
                   ),
                 ),

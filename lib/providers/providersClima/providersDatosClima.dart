@@ -6,9 +6,9 @@ class ProviderDatosClima with ChangeNotifier{
 
   double? _longitud;
 
- double get latitud => _latitud ?? 0;
+ double get latitud => _latitud ?? 100;
 
- double get longitud => _longitud ?? 0;
+ double get longitud => _longitud ?? 200;
 
  nuevaUbicacion(double nuevaLatitud,double nuevaLongitud){
    _latitud = nuevaLatitud;

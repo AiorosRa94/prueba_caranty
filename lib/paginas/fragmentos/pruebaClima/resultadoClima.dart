@@ -20,7 +20,8 @@ class ResultadoClima extends StatelessWidget {
     ApiClima _api = ApiClima();
     initializeDateFormatting('es_MX', null);
 
-    return FutureBuilder<DataClima>(
+    return providerClima.latitud > 90 || providerClima.longitud > 180 ?  Center(child: Column(children: [],),):
+     FutureBuilder<DataClima>(
         future: _api.getDatosClima(providerClima.latitud, providerClima.longitud),
         builder: (context, snapshot){
           if(snapshot.connectionState == ConnectionState.waiting) {

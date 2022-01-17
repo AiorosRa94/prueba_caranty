@@ -20,7 +20,6 @@ class PruebaDomingos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var providerDomingos = Provider.of<ProviderDomingos>(context);
-    print("Tamagno pantalla ${MediaQuery.of(context).size.height}");
 
     return Center(
       child: Form(

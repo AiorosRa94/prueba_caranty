@@ -18,8 +18,9 @@ class ApiClima with ChangeNotifier{
       return DataClima.fromJson(jsonDecode(response.body));
     } else {
       print("ERROR: ${response.body}");
-      throw Exception('Error al cargar los datos del clima ${response.statusCode}');
+      throw Exception('Error ${response.statusCode}: ${response.body}');
     }
+
   }
 
 }
