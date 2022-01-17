@@ -8,6 +8,7 @@ import 'package:prueba_caranty/providers/providersClima/providersDatosClima.dart
 import 'package:prueba_caranty/recursos/colores/colores.dart';
 import 'package:prueba_caranty/recursos/responsivo/pantalla.dart';
 import 'package:prueba_caranty/widgets/contenedores/contenedorMiniClima.dart';
+import 'package:prueba_caranty/widgets/texto/TextoContainer.dart';
 import 'package:prueba_caranty/widgets/texto/textoAutoajustable.dart';
 
 class ResultadoClima extends StatelessWidget {
@@ -27,7 +28,8 @@ class ResultadoClima extends StatelessWidget {
           if(snapshot.connectionState == ConnectionState.waiting) {
 
             return Center(child: CircularProgressIndicator(color: colores.principal,),);
-          } else if (snapshot.hasData) {
+          }
+          else if (snapshot.hasData) {
             final DateTime ahora = DateTime.now();
             final DateFormat formato = DateFormat('dd-MM-yyyy');
             final String ahoraformato = formato.format(ahora);
@@ -90,8 +92,9 @@ class ResultadoClima extends StatelessWidget {
                 ],
               )
             );
-          } else if (snapshot.hasError) {
-            return const  Center(child: TextoAutoajustable(texto: "¡Ups! Ocurrio un error", tamanoTexto: 30,),);
+          }
+          else if (snapshot.hasError) {
+            return  Center(child: TextoContainer(texto: "¡Ups! ${snapshot.error}",tamagnoTexto: 15,),);
           }
           else{
             return const Center(child: TextoAutoajustable(texto: "¡Ups! Algo ha salido muy mal", tamanoTexto: 25,),);

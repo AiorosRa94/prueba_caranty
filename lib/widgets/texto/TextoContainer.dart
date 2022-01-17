@@ -37,7 +37,7 @@ class TextoContainer extends StatelessWidget {
         color: colorContr,
         height: Pantalla(context).altoDisp(altoCont) ,
         width: Pantalla(context).anchoDisp(anchoCont),
-        child: Text(texto, style: TextStyle(fontSize: tamagno, color:colorTxt, fontWeight: pesoTxt,),maxLines: 1, textAlign: alineacionTxt,
+        child: Text(texto, style: TextStyle(fontSize: tamagno, color:colorTxt, fontWeight: pesoTxt,),maxLines: 10, textAlign: alineacionTxt,
         ),
       ),
     );
